@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Popup</title>
+  <style>
+    #popup {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      background-color: white;
+      padding: 30px;
+      border: 2px solid #444;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      z-index: 1000;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #popup button {
+      margin-top: 15px;
+      padding: 8px 16px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="popup">
+    <h3>¡Bienvenido!</h3>
+    <p>Síguenos en nuestras redes sociales para no perderte nada 🎉</p>
+    <button onclick="cerrarPopup()">Cerrar</button>
+  </div>
+
+  <script>
+    function cerrarPopup() {
+      document.getElementById("popup").style.display = "none";
+      localStorage.setItem("popupMostrado", "true");
+    }
+    window.onload = function() {
+      if (localStorage.getItem("popupMostrado")) {
+        cerrarPopup();
+      }
+    }
+  </script>
+</body>
+</html>
