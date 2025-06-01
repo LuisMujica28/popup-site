@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Álbum 3D</title>
+  <style>
+    body {
+      background: #111;
+      margin: 0;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: spin 20s linear infinite;
+    }
+
+    .carousel img {
+      position: absolute;
+      width: 180px;
+      height: 120px;
+      left: 60px;
+      top: 90px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+    @keyframes spin {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    /* Girar con mouse */
+    html:hover .carousel {
+      animation-play-state: paused;
+      cursor: grab;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel" id="carousel">
+    <!-- Imágenes de prueba (puedes reemplazar las URLs) -->
+    <img src="https://picsum.photos/200/120?random=1" style="transform: rotateY(0deg) translateZ(300px);">
+    <img src="https://picsum.photos/200/120?random=2" style="transform: rotateY(45deg) translateZ(300px);">
+    <img src="https://picsum.photos/200/120?random=3" style="transform: rotateY(90deg) translateZ(300px);">
+    <img src="https://picsum.photos/200/120?random=4" style="transform: rotateY(135deg) translateZ(300px);">
+    <img src="https://picsum.photos/200/120?random=5" style="transform: rotateY(180deg) translateZ(300px);">
+    <img src="https://picsum.photos/200/120?random=6" style="transform: rotateY(225deg) translateZ(300px);">
+    <img src="https://picsum.photos/200/120?random=7" style="transform: rotateY(270deg) translateZ(300px);">
+    <img src="https://picsum.photos/200/120?random=8" style="transform: rotateY(315deg) translateZ(300px);">
+  </div>
+</body>
+</html>
